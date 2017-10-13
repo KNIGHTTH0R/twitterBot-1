@@ -12,15 +12,15 @@ function getConnectionWithAccessToken($oauth_token, $oauth_token_secret) {
 
 $connection = getConnectionWithAccessToken("781532307228286976-FVPTxlj7624yyCCZ9PNdiegYqFPCWFI", "ft39Bp63NqbeX49pmpfTCPCBpelBO3g2ysaiG1ncAs9Db");
 
-$bookmarks_file = file_get_contents("chrome_bookmarks.json");
+$bookmarks_file = file_get_contents("/home/benfausch/webapps/twitterbot/chrome_bookmarks.json");
 $bookmarks      = json_decode($bookmarks_file, true);
 // print("<pre>" . print_r($json_a, 1) . "</pre>");
 
-$my_file = 'lasttweet.txt';
+$my_file = '/home/benfausch/webapps/twitterbot/lasttweet.txt';
 $handle  = fopen($my_file, 'r');
 $key     = fread($handle, filesize($my_file));
 
-//error_log('last tweet ID is:'.$key);
+error_log('last tweet ID is:'.$key);
 
 
 foreach ($bookmarks as $bookmark => $v) {
